@@ -28,7 +28,7 @@ void OptionsDialog::WildTree::fill_tree(const ColorConfig& cfg){
 	  Gtk::TreeIter treegr = model->append();
 	  Gtk::TreeModel::Row rowgr = *(treegr);
     std::stringstream str;
-    str<<(int)wpgit->color.r*255<<" "<<(int)wpgit->color.g*255<<" "<<(int)wpgit->color.b*255;
+    str<<(int)(wpgit->color.r*255.)<<" "<<(int)(wpgit->color.g*255.)<<" "<<(int)(wpgit->color.b*255.);
     rowgr[records.color] = str.str();
     str.str("");
     for(std::vector<std::string>::const_iterator it = wpgit->wp_list.begin();
