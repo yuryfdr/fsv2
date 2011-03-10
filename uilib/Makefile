@@ -79,13 +79,13 @@ HEADERS = $(libfsvui_la_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run aclocal-1.10
+ACLOCAL = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run aclocal-1.10
 ALLOCA = 
-AMTAR = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run tar
+AMTAR = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run tar
 AR = ar
-AUTOCONF = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run automake-1.10
+AUTOCONF = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run automake-1.10
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -117,10 +117,10 @@ GL_LIBS =  -lGL -lGLU
 GMSGFMT = /usr/bin/gmsgfmt
 GMSGFMT_015 = /usr/bin/gmsgfmt
 GREP = /bin/grep
-GTKGL_CFLAGS = -pthread -I/usr/include/gtkgl-2.0 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14  
-GTKGL_LIBS = -pthread -lgtkgl-2.0 -lGLU -lGL -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
-GTK_CFLAGS = -pthread -I/usr/include/gtkmm-2.4 -I/usr/lib/gtkmm-2.4/include -I/usr/include/giomm-2.4 -I/usr/lib/giomm-2.4/include -I/usr/include/pangomm-1.4 -I/usr/lib/pangomm-1.4/include -I/usr/include/gtk-2.0 -I/usr/include/gtk-unix-print-2.0 -I/usr/include/atkmm-1.6 -I/usr/include/gdkmm-2.4 -I/usr/lib/gdkmm-2.4/include -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/cairomm-1.0 -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0  
-GTK_LIBS = -pthread -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-x11-2.0 -lglibmm-2.4 -lcairomm-1.0 -lsigc-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
+GTKGL_CFLAGS = -pthread -DQT_SHARED -I/usr/include/gtkgl-2.0 -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14 -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/libdrm -I/usr/include/qt4/QtCore  
+GTKGL_LIBS = -pthread -lgtkgl-2.0 -lGLU -lGL -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lm -lcairo -lpng14 -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
+GTK_CFLAGS = -pthread -DQT_SHARED -I/usr/include/gtkmm-2.4 -I/usr/lib/gtkmm-2.4/include -I/usr/include/atkmm-1.6 -I/usr/include/giomm-2.4 -I/usr/lib/giomm-2.4/include -I/usr/include/pangomm-1.4 -I/usr/lib/pangomm-1.4/include -I/usr/include/gtk-2.0 -I/usr/include/gtk-unix-print-2.0 -I/usr/include/gdkmm-2.4 -I/usr/lib/gdkmm-2.4/include -I/usr/include/atk-1.0 -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/cairomm-1.0 -I/usr/lib/cairomm-1.0/include -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14 -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/libdrm -I/usr/include/qt4/QtCore -I/usr/lib/gtk-2.0/include -I/usr/include/gdk-pixbuf-2.0  
+GTK_LIBS = -pthread -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-x11-2.0 -lglibmm-2.4 -lcairomm-1.0 -lsigc-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lm -lcairo -lpng14 -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -140,7 +140,7 @@ LN_S = ln -s
 LTLIBICONV = -liconv
 LTLIBINTL = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/fedor/Projects/fsv/fsv2/trunk/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 MSGFMT = /usr/bin/msgfmt
 MSGFMT_015 = /usr/bin/msgfmt
@@ -170,14 +170,14 @@ SET_MAKE =
 SHELL = /bin/sh
 STRIP = strip
 USE_NLS = yes
-VERSION = 1.0.101
+VERSION = 1.1.0
 XGETTEXT = /usr/bin/xgettext
 XGETTEXT_015 = /usr/bin/xgettext
 XGETTEXT_EXTRA_OPTIONS = 
-abs_builddir = /home/fedor/Projects/fsv/fsv2/trunk/uilib
-abs_srcdir = /home/fedor/Projects/fsv/fsv2/trunk/uilib
-abs_top_builddir = /home/fedor/Projects/fsv/fsv2/trunk
-abs_top_srcdir = /home/fedor/Projects/fsv/fsv2/trunk
+abs_builddir = /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/uilib
+abs_srcdir = /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/uilib
+abs_top_builddir = /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100
+abs_top_srcdir = /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
@@ -206,7 +206,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = $(SHELL) /home/fedor/Projects/fsv/fsv2/trunk/install-sh
+install_sh = $(SHELL) /home/fedor/Projects/fsv/fsv2/branches/fsv-1.0.100/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -229,7 +229,7 @@ top_srcdir = ..
 lib_LTLIBRARIES = \
 	libfsvui.la
 
-libfsvui_la_CXXFLAGS = -pthread -I/usr/include/gtkmm-2.4 -I/usr/lib/gtkmm-2.4/include -I/usr/include/giomm-2.4 -I/usr/lib/giomm-2.4/include -I/usr/include/pangomm-1.4 -I/usr/lib/pangomm-1.4/include -I/usr/include/gtk-2.0 -I/usr/include/gtk-unix-print-2.0 -I/usr/include/atkmm-1.6 -I/usr/include/gdkmm-2.4 -I/usr/lib/gdkmm-2.4/include -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/cairomm-1.0 -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0  
+libfsvui_la_CXXFLAGS = -pthread -DQT_SHARED -I/usr/include/gtkmm-2.4 -I/usr/lib/gtkmm-2.4/include -I/usr/include/atkmm-1.6 -I/usr/include/giomm-2.4 -I/usr/lib/giomm-2.4/include -I/usr/include/pangomm-1.4 -I/usr/lib/pangomm-1.4/include -I/usr/include/gtk-2.0 -I/usr/include/gtk-unix-print-2.0 -I/usr/include/gdkmm-2.4 -I/usr/lib/gdkmm-2.4/include -I/usr/include/atk-1.0 -I/usr/include/glibmm-2.4 -I/usr/lib/glibmm-2.4/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sigc++-2.0 -I/usr/lib/sigc++-2.0/include -I/usr/include/cairomm-1.0 -I/usr/lib/cairomm-1.0/include -I/usr/include/pango-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng14 -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/libdrm -I/usr/include/qt4/QtCore -I/usr/lib/gtk-2.0/include -I/usr/include/gdk-pixbuf-2.0  
 libfsvui_la_SOURCES = \
 	ColorCellRenderer.cpp\
 	ColorCellEditable.cpp
@@ -238,7 +238,7 @@ libfsvui_la_HEADERS = \
 	ColorCellRenderer.h\
 	ColorCellEditable.h
 
-libfsvui_la_LIBADD = -pthread -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-x11-2.0 -lglibmm-2.4 -lcairomm-1.0 -lsigc-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
+libfsvui_la_LIBADD = -pthread -lgtkmm-2.4 -latkmm-1.6 -lgdkmm-2.4 -lgiomm-2.4 -lpangomm-1.4 -lgtk-x11-2.0 -lglibmm-2.4 -lcairomm-1.0 -lsigc-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lm -lcairo -lpng14 -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lrt -lglib-2.0  
 libfsvui_ladir = $(pkgincludedir)
 all: all-am
 
