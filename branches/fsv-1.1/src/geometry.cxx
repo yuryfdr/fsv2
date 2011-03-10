@@ -22,6 +22,7 @@
 
 
 #include "common.h"
+#include "fsvwindow.h"
 #include "geometry.h"
 
 #include <GL/gl.h>
@@ -32,7 +33,6 @@
 #include "color.h"
 #include "dirtree.h" /* dirtree_entry_expanded( ) */
 #include "ogl.h"
-#include "fsvwindow.h"
 
 /* 3D geometry for splash screen */
 #include "fsv3d.h"

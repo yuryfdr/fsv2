@@ -23,6 +23,7 @@
 
 
 #include "common.h"
+#include "fsvwindow.h"
 #include "scanfs.h"
 
 #include <dirent.h>
@@ -34,7 +35,6 @@
 #include "filelist.h"
 #include "geometry.h" /* geometry_free( ) */
 #include "viewport.h" /* viewport_pass_node_table( ) */
-#include "fsvwindow.h"
 
 
 #ifndef HAVE_SCANDIR

@@ -23,7 +23,8 @@
 
 
 #include "common.h"
-#include <gtk/gtk.h>
+#include "fsvwindow.h"
+
 #include "camera.h"
 
 
@@ -31,8 +32,6 @@
 #include "dirtree.h" /* dirtree_entry_expanded( ) */
 #include "filelist.h"
 #include "geometry.h"
-#include "fsvwindow.h"
-
 
 /* Lower/upper bounds on pan times (in seconds) */
 #define DISCV_CAMERA_MIN_PAN_TIME	0.5

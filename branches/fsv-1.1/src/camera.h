@@ -86,9 +86,6 @@ union AnyCamera {
 /* The camera */
 extern Camera *camera;
 
-#include <gtk/gtk.h>
-
-
 boolean camera_moving( void );
 void camera_init( FsvMode mode, boolean initial_view );
 void camera_pass_scrollbar_widgets( GtkWidget *x_scrollbar_w, GtkWidget *y_scrollbar_w );

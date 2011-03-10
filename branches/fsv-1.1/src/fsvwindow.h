@@ -15,7 +15,9 @@
  * License along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
- 
+
+#ifndef __fsv_window_h__
+#define __fsv_window_h__
 #include "common.h"
 #include <color.h>
 
@@ -193,4 +195,6 @@ void text_draw_curved( const char *text, const RTZvec *text_pos, const RTvec *te
 #ifdef __cplusplus
 };
 #endif
+
+#endif // __fsv_window_h__
 
