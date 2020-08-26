@@ -162,7 +162,7 @@ draw_text( void )
 	tdims.y = 12.0;
 	tpos.y = 100.0 * q - 180.0; /* -80 */
 	glColor3f( 0.5, 0.5, 0.5 );
-	text_draw_straight( _("Copyright ©2009-2011 by Yury P. Fedorchenko"), &tpos, &tdims );
+	text_draw_straight( _("Copyright (C)2009-2020 by Yury P. Fedorchenko"), &tpos, &tdims );
 	tpos.y = 100.0 * q - 195.0; /* -80 */
 	text_draw_straight( _("Copyright (C)1999 by Daniel Richard G."), &tpos, &tdims );
 

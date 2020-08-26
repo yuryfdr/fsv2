@@ -62,6 +62,7 @@ fsv2_LDADD = \
 	$(GTK_LIBS) \
 	$(GTKGL_LIBS) \
 	$(FTGL_LIBS) \
+	$(GL_LIBS) \
 	$(GNOMEUI_LIBS)
 
 EXTRA_DIST = \

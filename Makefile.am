@@ -3,3 +3,4 @@ SUBDIRS = debugloc doc po uilib src
 
 desktopdir = $(datadir)/applications
 desktop_DATA = fsv2.desktop
+ACLOCAL_AMFLAGS = -I m4
