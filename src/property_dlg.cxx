@@ -65,8 +65,8 @@ PropertyDialog::PropertyDialog(GNode *nd ): Gtk::Dialog(_("Properties"),true),no
   if(NODE_DESC(node)->type==NODE_DIRECTORY){
     ico.set(Gtk::Stock::DIRECTORY,Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );
   } else if(NODE_DESC(node)->type==NODE_REGFILE){
-    ico.set(file_info->get_icon (),Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );
-    //ico.set(Gtk::Stock::FILE,Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );
+    //ico.set(file_info->get_icon(),Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );
+    ico.set(Gtk::Stock::FILE,Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );
   } /*else if(NODE_DESC(node)->type==NODE_SYMLINK){
     Glib::RefPtr<Gio::File> file = Gio::File::create_for_path(node_absname(node));
     ico.set(file->query_info ()->get_icon (),Gtk::IconSize(Gtk::ICON_SIZE_DIALOG) );

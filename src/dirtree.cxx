@@ -127,8 +127,8 @@ FsvDirTree::FsvDirTree(){
 	pcol->pack_start(records.icon,false);
 	pcol->pack_start(records.name);
 	append_column(*pcol);
-	folder_closed = render_icon(Gtk::Stock::DIRECTORY,Gtk::IconSize(Gtk::ICON_SIZE_MENU));//Gdk::Pixbuf::create_from_xpm_data(mini_folder_closed_xpm);
-	folder_opened = render_icon(Gtk::Stock::OPEN     ,Gtk::IconSize(Gtk::ICON_SIZE_MENU));//Gdk::Pixbuf::create_from_xpm_data(mini_folder_open_xpm);
+  folder_closed = Gtk::IconTheme::get_default()->load_icon("folder",Gtk::ICON_SIZE_MENU);//render_icon(Gtk::Stock::DIRECTORY,Gtk::IconSize(Gtk::ICON_SIZE_MENU));//Gdk::Pixbuf::create_from_xpm_data(mini_folder_closed_xpm);
+  folder_opened = Gtk::IconTheme::get_default()->load_icon("folder-open",Gtk::ICON_SIZE_MENU);//render_icon(Gtk::Stock::OPEN     ,Gtk::IconSize(Gtk::ICON_SIZE_MENU));//Gdk::Pixbuf::create_from_xpm_data(mini_folder_open_xpm);
 }
 
 /* Clears out all entries from the directory tree */

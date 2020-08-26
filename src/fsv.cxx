@@ -24,7 +24,7 @@
 #include "fsv.h"
 #include "fsvwindow.h"
 
-#include <gtkgl/gdkgl.h>
+#include <gtk/gtkglarea.h>
 #include "getopt.h"
 
 #include "about.h"
@@ -297,7 +297,7 @@ main( int argc, char **argv )
   FsvWindow win;
   FsvWindow::current = &win;
 	/* Check for OpenGL support */
-	if (!gdk_gl_query( ))
+  //if (!gdk_gl_query( ))
 		;//quit( _("fsv requires OpenGL support.") );
 
   win.set_visible(true);

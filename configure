@@ -637,8 +637,6 @@ FILE_CMD
 FC_CACHE
 FTGL_LIBS
 FTGL_CFLAGS
-GTKGL_LIBS
-GTKGL_CFLAGS
 GL_LIBS
 GL_CFLAGS
 GTK_LIBS
@@ -832,8 +830,6 @@ PKG_CONFIG_PATH
 PKG_CONFIG_LIBDIR
 GTK_CFLAGS
 GTK_LIBS
-GTKGL_CFLAGS
-GTKGL_LIBS
 FTGL_CFLAGS
 FTGL_LIBS'
 
@@ -1511,9 +1507,6 @@ Some influential environment variables:
               path overriding pkg-config's built-in search path
   GTK_CFLAGS  C compiler flags for GTK, overriding pkg-config
   GTK_LIBS    linker flags for GTK, overriding pkg-config
-  GTKGL_CFLAGS
-              C compiler flags for GTKGL, overriding pkg-config
-  GTKGL_LIBS  linker flags for GTKGL, overriding pkg-config
   FTGL_CFLAGS C compiler flags for FTGL, overriding pkg-config
   FTGL_LIBS   linker flags for FTGL, overriding pkg-config
 
@@ -19654,19 +19647,19 @@ $as_echo "no" >&6; }
 fi
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtkmm-2.4" >&5
-$as_echo_n "checking for gtkmm-2.4... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtkmm-3.0" >&5
+$as_echo_n "checking for gtkmm-3.0... " >&6; }
 
 if test -n "$GTK_CFLAGS"; then
     pkg_cv_GTK_CFLAGS="$GTK_CFLAGS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkmm-3.0\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "gtkmm-3.0") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_GTK_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-2.4" 2>/dev/null`
+  pkg_cv_GTK_CFLAGS=`$PKG_CONFIG --cflags "gtkmm-3.0" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -19678,12 +19671,12 @@ if test -n "$GTK_LIBS"; then
     pkg_cv_GTK_LIBS="$GTK_LIBS"
  elif test -n "$PKG_CONFIG"; then
     if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkmm-2.4\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtkmm-2.4") 2>&5
+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkmm-3.0\""; } >&5
+  ($PKG_CONFIG --exists --print-errors "gtkmm-3.0") 2>&5
   ac_status=$?
   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
   test $ac_status = 0; }; then
-  pkg_cv_GTK_LIBS=`$PKG_CONFIG --libs "gtkmm-2.4" 2>/dev/null`
+  pkg_cv_GTK_LIBS=`$PKG_CONFIG --libs "gtkmm-3.0" 2>/dev/null`
 		      test "x$?" != "x0" && pkg_failed=yes
 else
   pkg_failed=yes
@@ -19704,14 +19697,14 @@ else
         _pkg_short_errors_supported=no
 fi
         if test $_pkg_short_errors_supported = yes; then
-	        GTK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtkmm-2.4" 2>&1`
+	        GTK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtkmm-3.0" 2>&1`
         else
-	        GTK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtkmm-2.4" 2>&1`
+	        GTK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtkmm-3.0" 2>&1`
         fi
 	# Put the nasty error message in config.log where it belongs
 	echo "$GTK_PKG_ERRORS" >&5
 
-	as_fn_error $? "Package requirements (gtkmm-2.4) were not met:
+	as_fn_error $? "Package requirements (gtkmm-3.0) were not met:
 
 $GTK_PKG_ERRORS
 
@@ -19882,97 +19875,7 @@ fi
 #### end of OpenGL/Mesa3D configuration ####
 
 #### GtkGLArea library ####
-
-pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtkgl-2.0" >&5
-$as_echo_n "checking for gtkgl-2.0... " >&6; }
-
-if test -n "$GTKGL_CFLAGS"; then
-    pkg_cv_GTKGL_CFLAGS="$GTKGL_CFLAGS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkgl-2.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtkgl-2.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GTKGL_CFLAGS=`$PKG_CONFIG --cflags "gtkgl-2.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-if test -n "$GTKGL_LIBS"; then
-    pkg_cv_GTKGL_LIBS="$GTKGL_LIBS"
- elif test -n "$PKG_CONFIG"; then
-    if test -n "$PKG_CONFIG" && \
-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"gtkgl-2.0\""; } >&5
-  ($PKG_CONFIG --exists --print-errors "gtkgl-2.0") 2>&5
-  ac_status=$?
-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-  test $ac_status = 0; }; then
-  pkg_cv_GTKGL_LIBS=`$PKG_CONFIG --libs "gtkgl-2.0" 2>/dev/null`
-		      test "x$?" != "x0" && pkg_failed=yes
-else
-  pkg_failed=yes
-fi
- else
-    pkg_failed=untried
-fi
-
-
-
-if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-
-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
-        _pkg_short_errors_supported=yes
-else
-        _pkg_short_errors_supported=no
-fi
-        if test $_pkg_short_errors_supported = yes; then
-	        GTKGL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "gtkgl-2.0" 2>&1`
-        else
-	        GTKGL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "gtkgl-2.0" 2>&1`
-        fi
-	# Put the nasty error message in config.log where it belongs
-	echo "$GTKGL_PKG_ERRORS" >&5
-
-	as_fn_error $? "Package requirements (gtkgl-2.0) were not met:
-
-$GTKGL_PKG_ERRORS
-
-Consider adjusting the PKG_CONFIG_PATH environment variable if you
-installed software in a non-standard prefix.
-
-Alternatively, you may set the environment variables GTKGL_CFLAGS
-and GTKGL_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details." "$LINENO" 5
-elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-$as_echo "no" >&6; }
-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
-is in your PATH or set the PKG_CONFIG environment variable to the full
-path to pkg-config.
-
-Alternatively, you may set the environment variables GTKGL_CFLAGS
-and GTKGL_LIBS to avoid the need to call pkg-config.
-See the pkg-config man page for more details.
-
-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
-See \`config.log' for more details" "$LINENO" 5; }
-else
-	GTKGL_CFLAGS=$pkg_cv_GTKGL_CFLAGS
-	GTKGL_LIBS=$pkg_cv_GTKGL_LIBS
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-$as_echo "yes" >&6; }
-
-fi
+#PKG_CHECK_MODULES(GTKGL, gtkgl-2.0)
 #PKG_CHECK_MODULES(GNOMEUI, libgnomeui-2.0)
 
 # Check whether --enable-glc was given.
@@ -20244,8 +20147,8 @@ fi
 #CFLAGS="$CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1  -DG_DISABLE_DEPRECATED=1 "
 #CFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 -DG_DISABLE_DEPRECATED=1 "
 #CXXFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 -DG_DISABLE_DEPRECATED=1 "
-CFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 "
-CXXFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 "
+#CFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 "
+#CXXFLAGS="-g -Wall $CFLAGS -DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 -DGDK_PIXBUF_DISABLE_DEPRECATED=1 "
 # That's a wrap!
 ac_config_files="$ac_config_files fsv.spec Makefile debugloc/Makefile doc/Makefile po/Makefile.in src/Makefile uilib/Makefile"
 

@@ -202,7 +202,8 @@ about_progress_cb( Morph *unused )
 boolean
 about( AboutMesg mesg )
 {
-	switch (mesg) {
+  ogl_set_context();
+  switch (mesg) {
 		case ABOUT_BEGIN:
 		/* Begin the presentation */
 		morph_break( &about_part );

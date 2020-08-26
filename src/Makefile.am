@@ -10,7 +10,6 @@ INCLUDES = \
 	-DDOCDIR=\"$(docdir)\" \
 	$(DEBUG_CFLAGS) \
 	@GTK_CFLAGS@ \
-	@GTKGL_CFLAGS@ \
 	@GL_CFLAGS@ \
 	-DLOCALE_DIR=\"@localedir@\"
 

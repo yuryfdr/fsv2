@@ -31,8 +31,8 @@ Glib::PropertyProxy< bool > ColorCellRenderer::property_editable()
 {
 	return property_editable_.get_proxy();
 }
-
-/* override */void ColorCellRenderer::get_size_vfunc (Gtk::Widget& widget, const Gdk::Rectangle* cell_area, int* x_offset, int* y_offset, int* width, int* height) const
+/*
+void ColorCellRenderer::get_size_vfunc (Gtk::Widget& widget, const Gdk::Rectangle* cell_area, int* x_offset, int* y_offset, int* width, int* height) const
 {
 	// We cache this because it takes a really long time to get the width.
 	if(button_width_ < 0)
@@ -51,16 +51,17 @@ Glib::PropertyProxy< bool > ColorCellRenderer::property_editable()
 
     if( height )
         *height = calc_height;    
-}
+}*/
 
-/* override */void ColorCellRenderer::render_vfunc (const Glib::RefPtr<Gdk::Drawable>& window, Gtk::Widget& widget, const Gdk::Rectangle& background_area, const Gdk::Rectangle& cell_area, const Gdk::Rectangle& expose_area, Gtk::CellRendererState flags)
+/* override */void ColorCellRenderer::render_vfunc (const::Cairo::RefPtr<Cairo::Context> &cr, Gtk::Widget &widget, const Gdk::Rectangle &background_area, const Gdk::Rectangle &cell_area, Gtk::CellRendererState flags)
 {
 	// Get cell size
-    int x_offset = 0, y_offset = 0, width = 0, height = 0;
-    get_size (widget, cell_area, x_offset, y_offset, width, height);
+    //int x_offset = 0, y_offset = 0, width = 0, height = 0;
+    //widget.get_width()
+    //get_size (widget, cell_area, x_offset, y_offset, width, height);
     
     // Create the graphic context
-    Glib::RefPtr< Gdk::GC > gc = Gdk::GC::create (window);
+    //Glib::RefPtr< Gdk::GC > gc = Gdk::GC::create (window);
     
     // Get cell state
     Gtk::StateType state;
@@ -90,7 +91,11 @@ Glib::PropertyProxy< bool > ColorCellRenderer::property_editable()
 	Gdk::Color color_value;
 	color_value.set_rgb_p (r/255.0, g/255.0, b/255.0);
 	
-	// Draw color area
+  cr->set_source_rgb(r/255.0, g/255.0, b/255.0);
+  cr->rectangle(cell_area.get_x(),cell_area.get_y(),cell_area.get_width(),cell_area.get_height());
+  cr->set_source_rgb(r/255.0, g/255.0, b/255.0);
+  cr->text_path("cellrenderertext");
+/*	// Draw color area
     gc->set_rgb_fg_color( color_value );
     window->draw_rectangle(gc, 
     		true, 
@@ -110,7 +115,7 @@ Glib::PropertyProxy< bool > ColorCellRenderer::property_editable()
           "cellrenderertext",
           cell_area.get_x() + ColorCellEditable::get_color_area_width() + x_offset + 2 * property_xpad(),
           cell_area.get_y() + y_offset + 2 * property_ypad(),
-          layout_ptr);    
+          layout_ptr);    */
 }
 
 /* override */bool ColorCellRenderer::activate_vfunc (GdkEvent*, Gtk::Widget&, const Glib::ustring& path, const Gdk::Rectangle& background_area, const Gdk::Rectangle& cell_area, Gtk::CellRendererState flags)

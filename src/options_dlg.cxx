@@ -10,7 +10,7 @@ OptionsDialog::WildTree::WildTree(OptionsDialog* dlg):colcolor(_("Color"),colren
   colcolor.add_attribute(colrend.property_text(),records.color);
   colrend.signal_edited().connect(
     sigc::mem_fun(*dlg,&OptionsDialog::on_color_edited));
-  Gtk::CellRendererText* rwp = dynamic_cast<Gtk::CellRendererText*>(colpattern.get_first_cell_renderer());
+  Gtk::CellRendererText* rwp = dynamic_cast<Gtk::CellRendererText*>(colpattern.get_first_cell());
   if(rwp){
     rwp->property_editable() = true;
     rwp->signal_edited().connect(
@@ -142,9 +142,9 @@ OptionsDialog::OptionsDialog() : Gtk::Dialog(_("Color Setup"),true),tbl_file_typ
   tbl_timestamp.attach(lbl_colorby,0,1,      2,3);
   tbl_timestamp.attach(cbx_timestamp_type,1,5,2,3);
   
-  cbx_timestamp_type.append_text(_("time of last access"));
-  cbx_timestamp_type.append_text(_("time of last modification"));
-  cbx_timestamp_type.append_text(_("time of last attribute change"));
+  cbx_timestamp_type.append(_("time of last access"));
+  cbx_timestamp_type.append(_("time of last modification"));
+  cbx_timestamp_type.append(_("time of last attribute change"));
   cbx_timestamp_type.set_active((int)ccfg.by_timestamp.timestamp_type);
   cbx_timestamp_type.signal_changed().connect(sigc::mem_fun(*this,&OptionsDialog::on_timestamp_type_changed));
   
@@ -153,9 +153,9 @@ OptionsDialog::OptionsDialog() : Gtk::Dialog(_("Color Setup"),true),tbl_file_typ
   tbl_timestamp.attach(cbx_spectrum_type,2,3,3,4);
   tbl_timestamp.attach(lbl_newer,3,4,        3,4);
   tbl_timestamp.attach(btn_newer,4,5,        3,4);
-  cbx_spectrum_type.append_text(_("Rainbow"));
-  cbx_spectrum_type.append_text(_("Heat"));
-  cbx_spectrum_type.append_text(_("Gradient"));
+  cbx_spectrum_type.append(_("Rainbow"));
+  cbx_spectrum_type.append(_("Heat"));
+  cbx_spectrum_type.append(_("Gradient"));
   cbx_spectrum_type.set_active((int)ccfg.by_timestamp.spectrum_type);
   cbx_spectrum_type.signal_changed().connect(sigc::mem_fun(*this,&OptionsDialog::on_spectrum_type_changed));
   btn_older.signal_color_set().connect(

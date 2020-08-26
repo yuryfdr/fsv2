@@ -21,7 +21,7 @@
  */
 
 #include <gtk/gtk.h>
-#include <gtkgl/gtkglarea.h>
+#include <gtk/gtkglarea.h>
 
 #include "common.h"
 #include "ogl.h"
@@ -38,6 +38,10 @@
 /* Main viewport OpenGL area widget */
 static GtkWidget *viewport_gl_area_w = NULL;
 
+
+void ogl_set_context( void ){
+  gtk_gl_area_make_current(viewport_gl_area_w);
+}
 
 /* Initializes OpenGL state */
 static void
@@ -94,9 +98,11 @@ ogl_resize( void )
 {
 	int width, height;
 
-	width = viewport_gl_area_w->allocation.width;
-	height = viewport_gl_area_w->allocation.height;
-	glViewport( 0, 0, width, height );
+  //width = viewport_gl_area_w->allocation.width;
+  //height = viewport_gl_area_w->allocation.height;
+  width = gtk_widget_get_allocated_width(viewport_gl_area_w);
+  height = gtk_widget_get_allocated_height(viewport_gl_area_w);
+  glViewport( 0, 0, width, height );
 }
 
 
@@ -182,6 +188,7 @@ setup_modelview_matrix( void )
 void
 ogl_draw( void )
 {
+  gtk_gl_area_make_current(GTK_GL_AREA(viewport_gl_area_w));
 	static FsvMode prev_mode = FSV_NONE;
 	int err;
 
@@ -205,7 +212,7 @@ ogl_draw( void )
 			return;
 	}
 
-	gtk_gl_area_swapbuffers( GTK_GL_AREA(viewport_gl_area_w) );
+  //gtk_gl_area_swapbuffers( GTK_GL_AREA(viewport_gl_area_w) );
 }
 
 
@@ -260,7 +267,7 @@ realize_cb( GtkWidget *gl_area_w )
 GtkWidget *
 ogl_widget_new( void )
 {
-	int gl_area_attributes[] = {
+/*	int gl_area_attributes[] = {
 		GDK_GL_RGBA,
 		GDK_GL_RED_SIZE, 1,
 		GDK_GL_GREEN_SIZE, 1,
@@ -268,13 +275,13 @@ ogl_widget_new( void )
 		GDK_GL_DEPTH_SIZE, 1,
 		GDK_GL_DOUBLEBUFFER,
 		GDK_GL_NONE
-	};
+  };*/
 
 	/* Create the widget */
-	viewport_gl_area_w = gtk_gl_area_new( gl_area_attributes );
-
+  viewport_gl_area_w = gtk_gl_area_new();// gl_area_attributes );
+  gtk_gl_area_set_required_version(GTK_GL_AREA(viewport_gl_area_w),4,5);
 	/* Initialize widget's GL state when realized */
-	g_signal_connect( GTK_OBJECT(viewport_gl_area_w), "realize", G_CALLBACK(realize_cb), NULL );
+  g_signal_connect( viewport_gl_area_w, "realize", G_CALLBACK(realize_cb), NULL );
 
 	return viewport_gl_area_w;
 }

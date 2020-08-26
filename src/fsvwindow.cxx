@@ -122,16 +122,17 @@ void window_statusbar( StatusBarID sb_id, const std::string& message ){
 // old C functions
 void context_menu( GNode *node, GdkEventButton *ev_button ){
   FsvWindow::current->popa_node = node;
-  Gtk::Menu::MenuList& items = FsvWindow::current->popa->items();
+  auto items = FsvWindow::current->popa->get_action_group("");
+  /*Gtk::Menu::MenuList& items = FsvWindow::current->popa->items();
   for(Gtk::Menu::MenuList::iterator it = items.begin();it!=items.end();++it){
     it->hide();
-  }
+  }*/
 	/* Check for the special case in which the menu has only one item */
 	/*if (!NODE_IS_DIR(node) && (node == globals.current_node)) {
 		items[4].show();//dialog_node_properties( node );
 		//return;
 	}*/
-	if (NODE_IS_DIR(node)) {
+  /*if (NODE_IS_DIR(node)) {
 		if (dirtree_entry_expanded( node ))
 			items[1].show();
 		else {
@@ -142,7 +143,7 @@ void context_menu( GNode *node, GdkEventButton *ev_button ){
 	}
 	if (node != globals.current_node)	items[4].show();
 	items[0].show();
-	items[5].show();
+  items[5].show();*/
   FsvWindow::current->popa->popup(ev_button->button,ev_button->time);
 }
 
@@ -158,9 +159,9 @@ void FsvWindow::on_change_root(){
   if (dialog.run() == Gtk::RESPONSE_OK){
     std::string filename = dialog.get_filename();
     dialog.hide();
-    get_window()->set_cursor(Gdk::Cursor(Gdk::WATCH));
+    get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
 	  fsv_load( filename.c_str() );
-    get_window()->set_cursor(Gdk::Cursor(Gdk::LEFT_PTR));
+    get_window()->set_cursor(Gdk::Cursor::create(Gdk::LEFT_PTR));
   }
 }
 
@@ -261,17 +262,21 @@ Glib::RefPtr<Gdk::Pixbuf> FsvWindow::node_type_mini_icons[NUM_NODE_TYPES];
 
 FsvWindow::FsvWindow() : Gtk::Window(){
   Glib::RefPtr<Gtk::IconFactory> icfa=Gtk::IconFactory::create();
-  icfa->add(BIRDEYE,Gtk::IconSet(Gdk::Pixbuf::create_from_xpm_data(birdseye_view_xpm)));
+  icfa->add(BIRDEYE,Gtk::IconSet::create(Gdk::Pixbuf::create_from_xpm_data(birdseye_view_xpm)));
   Gtk::Stock::add(BirdEye);
   icfa->add_default();
   fsvicon = Gdk::Pixbuf::create_from_xpm_data(fsv_icon_xpm);
   set_icon(fsvicon);
-  
+  /*auto il = Gtk::IconTheme::get_default()->list_icons();
+  std::sort(il.begin(),il.end());
+  for(auto s : il){
+    std::cerr<<s<<std::endl;
+  }*/
 	for(int i = 1; i < NUM_NODE_TYPES; i++){
 	  if(NODE_DIRECTORY == i){
-	    node_type_mini_icons[NODE_DIRECTORY] = render_icon(Gtk::Stock::DIRECTORY,Gtk::IconSize(Gtk::ICON_SIZE_MENU));
+      node_type_mini_icons[NODE_DIRECTORY] = Gtk::IconTheme::get_default()->load_icon("folder",Gtk::ICON_SIZE_MENU);//render_icon(Gtk::Stock::DIRECTORY,Gtk::IconSize(Gtk::ICON_SIZE_MENU));
 	  }else if(NODE_REGFILE == i){
-	    node_type_mini_icons[NODE_REGFILE] = render_icon(Gtk::Stock::FILE,Gtk::IconSize(Gtk::ICON_SIZE_MENU));
+      node_type_mini_icons[NODE_REGFILE] = Gtk::IconTheme::get_default()->load_icon("text-x-generic",Gtk::ICON_SIZE_MENU);//render_icon(Gtk::Stock::FILE,Gtk::IconSize(Gtk::ICON_SIZE_MENU));
 	  }else{
 		  node_type_mini_icons[i] = Gdk::Pixbuf::create_from_xpm_data(node_type_mini_xpms[i]);
 		}
@@ -443,7 +448,7 @@ FsvWindow::FsvWindow() : Gtk::Window(){
 	bitmask |= GDK_LEAVE_NOTIFY_MASK;
 	gtk_widget_set_events( GTK_WIDGET(gl_area_w), bitmask );
 	gtk_widget_set_size_request( GTK_WIDGET(gl_area_w), 600, 480);
-	g_signal_connect( GTK_OBJECT(gl_area_w), "event", G_CALLBACK(viewport_cb), NULL );
+  g_signal_connect( gl_area_w, "event", G_CALLBACK(viewport_cb), NULL );
 	Gtk::Widget* w=Glib::wrap(gl_area_w);
 	tbl_right.attach(*w,0,1,0,1);
 	tbl_right.attach(x_scroll,0,1,1,2,Gtk::FILL|Gtk::EXPAND,Gtk::SHRINK);
@@ -454,7 +459,7 @@ FsvWindow::FsvWindow() : Gtk::Window(){
 	
 	tbl_right.attach(rsbar,0,2,2,3,Gtk::FILL|Gtk::EXPAND,Gtk::SHRINK);
   bx_left.pack_end(sbar,Gtk::PACK_SHRINK);
-  sbar.set_has_resize_grip(false);
+  //sbar.set_has_resize_grip(false);
 //  rsbar.set_size_request(150);
   
 #if defined HAVE_FTGL

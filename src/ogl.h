@@ -30,6 +30,8 @@
 extern "C" {
 #endif
 
+void ogl_set_context( void );
+
 void ogl_resize( void );
 void ogl_refresh( void );
 double ogl_aspect_ratio( void );

@@ -27,13 +27,13 @@ ColorCellEditable::ColorCellEditable(const Glib::ustring& path) :
 	entry_ptr_ = new Gtk::Entry();
 	hbox->pack_start (*Gtk::manage(entry_ptr_), Gtk::PACK_EXPAND_WIDGET);
 	entry_ptr_->set_has_frame (false);
-	entry_ptr_->gobj()->is_cell_renderer = true; // XXX
+  //entry_ptr_->gobj()->is_cell_renderer = true; // XXX
   
 	button_ptr_ = new Gtk::Button();
 	hbox->pack_start (*Gtk::manage( button_ptr_ ), Gtk::PACK_SHRINK);
 	button_ptr_->add (*Gtk::manage(new Gtk::Arrow(Gtk::ARROW_DOWN, Gtk::SHADOW_OUT)));
   
-	set_flags(Gtk::CAN_FOCUS);
+  //set_flags(Gtk::CAN_FOCUS);
   
 	show_all_children();
 }
@@ -88,10 +88,11 @@ int ColorCellEditable::get_button_width()
 	// Urgh.  Hackish :/
 	window.move(-500, -500);
 	window.show_all();
-
-	Gtk::Requisition requisition = window.size_request();
-
-	return requisition.width;
+  int w,h;
+  //Gtk::Requisition requisition = window.get_size_request(w,h);
+  window.get_size_request(w,h);
+  //return requisition.width;
+  return w;
 }
 
 /* static */ int ColorCellEditable::get_color_area_width()
@@ -136,7 +137,7 @@ void ColorCellEditable::on_button_clicked()
 
 	dialog.set_transient_for ((Gtk::Window&)(*this->get_toplevel()));
 
-	Gtk::ColorSelection* colorsel = dialog.get_colorsel();
+  Gtk::ColorSelection* colorsel = dialog.get_color_selection();
 	colorsel->set_previous_color (color_);
 	colorsel->set_current_color (color_);
 	colorsel->set_has_palette (true);
@@ -152,7 +153,7 @@ void ColorCellEditable::on_button_clicked()
 
 bool ColorCellEditable::on_entry_key_press_event(GdkEventKey* event)
 {
-	if (event->keyval == GDK_Escape)
+  if (event->keyval == GDK_KEY_Escape)
 	{
 		std::cout << "Press ESCAPE" << std::endl;
 		
