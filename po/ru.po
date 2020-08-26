@@ -1,0 +1,415 @@
+# Russian translations for fsv2 package
+# Английские переводы для пакета fsv2.
+# Copyright (C) 2011 THE fsv2'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the fsv2 package.
+#  <yfdrnchk@mail.ru>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: fsv2 1.1.0\n"
+"Report-Msgid-Bugs-To: yuryfdr@users.sf.net\n"
+"POT-Creation-Date: 2020-08-26 11:24+0300\n"
+"PO-Revision-Date: 2011-03-10 11:12+0300\n"
+"Last-Translator: Yury P. Fedorchenko <yury(at)fedorchenko.net>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/about.c:156
+msgid "fsv2 - 3D File System Visualizer"
+msgstr "fsv2 - 3D Визуализатор файловой системы"
+
+#: src/about.c:165
+msgid "Copyright (C)2009-2020 by Yury P. Fedorchenko"
+msgstr "Copyright ©2009-2011 Ю.П. Федорченко"
+
+#: src/about.c:167
+msgid "Copyright (C)1999 by Daniel Richard G."
+msgstr ""
+
+#: src/common.cxx:84
+msgid "Directory"
+msgstr "Папка"
+
+#: src/common.cxx:85
+msgid "Regular file"
+msgstr "Файл"
+
+#: src/common.cxx:86
+msgid "Symbolic link"
+msgstr "Символическая ссылка"
+
+#: src/common.cxx:87
+#, fuzzy
+msgid "Named pipe (FIFO)"
+msgstr "Именованный pipe (FIFO)"
+
+#: src/common.cxx:88
+msgid "Network socket"
+msgstr "Сетевой сокет"
+
+#: src/common.cxx:89
+msgid "Character device"
+msgstr "Символьное устройство"
+
+#: src/common.cxx:90
+msgid "Block device"
+msgstr "Блочное устройство"
+
+#: src/common.cxx:91 src/common.cxx:104 src/property_dlg.cxx:146
+msgid "Unknown"
+msgstr "Неизвестный"
+
+#: src/common.cxx:97
+msgid "Directories"
+msgstr "Папки"
+
+#: src/common.cxx:98
+msgid "Regular files"
+msgstr "Файлы"
+
+#: src/common.cxx:99
+msgid "Symlinks"
+msgstr "Символические ссылки"
+
+#: src/common.cxx:100
+msgid "Named pipes"
+msgstr ""
+
+#: src/common.cxx:101
+msgid "Sockets"
+msgstr "Сокеты"
+
+#: src/common.cxx:102
+msgid "Char. devs."
+msgstr "Симв. уст-ва"
+
+#: src/common.cxx:103
+msgid "Block devs."
+msgstr "Блочн. уст-ва"
+
+#: src/common.cxx:118 src/common.cxx:131 src/common.cxx:144
+msgid "Out of memory"
+msgstr ""
+
+#: src/common.cxx:312
+msgid "B"
+msgstr "Б"
+
+#: src/common.cxx:313
+msgid "kB"
+msgstr "кБ"
+
+#: src/common.cxx:314
+msgid "MB"
+msgstr "МБ"
+
+#: src/common.cxx:315
+msgid "GB"
+msgstr "ГБ"
+
+#: src/common.cxx:316
+msgid "TB"
+msgstr "ТБ"
+
+#: src/common.cxx:317
+msgid "PB"
+msgstr "ПБ"
+
+#: src/common.cxx:318
+msgid "EB"
+msgstr "ЭБ"
+
+#: src/common.cxx:450
+msgid "Could not execute 'file' command"
+msgstr "Команда 'file' не выполнена"
+
+#: src/options_dlg.cxx:5
+msgid "Color"
+msgstr "Цвет"
+
+#: src/options_dlg.cxx:6
+msgid "Patterns"
+msgstr "Фильтры"
+
+#: src/options_dlg.cxx:88
+msgid "Color Setup"
+msgstr "Настройка цвета"
+
+#: src/options_dlg.cxx:90
+msgid "Oldest:"
+msgstr "Старейшее:"
+
+#: src/options_dlg.cxx:90
+msgid "Newest:"
+msgstr "Новейшее:"
+
+#: src/options_dlg.cxx:91
+msgid "Color by:"
+msgstr "Цвет по:"
+
+#: src/options_dlg.cxx:91
+msgid "Older"
+msgstr "Старее"
+
+#: src/options_dlg.cxx:91
+msgid "Newer"
+msgstr "Новее"
+
+#: src/options_dlg.cxx:92
+msgid "Add"
+msgstr "Добавить"
+
+#: src/options_dlg.cxx:92
+msgid "Remove"
+msgstr "Удалить"
+
+#: src/options_dlg.cxx:94
+msgid "By nodetype"
+msgstr "По типу"
+
+#: src/options_dlg.cxx:115
+msgid "By timestamp"
+msgstr "По времени"
+
+#: src/options_dlg.cxx:145
+msgid "time of last access"
+msgstr "времени доступа"
+
+#: src/options_dlg.cxx:146
+msgid "time of last modification"
+msgstr "времени правки"
+
+#: src/options_dlg.cxx:147
+msgid "time of last attribute change"
+msgstr "времени изменения атрибутов"
+
+#: src/options_dlg.cxx:156
+msgid "Rainbow"
+msgstr "Радуга"
+
+#: src/options_dlg.cxx:157
+msgid "Heat"
+msgstr "Нагрев"
+
+#: src/options_dlg.cxx:158
+msgid "Gradient"
+msgstr "Градиент"
+
+#: src/options_dlg.cxx:170
+msgid "By wildcard"
+msgstr "По фильтру"
+
+#: src/property_dlg.cxx:30
+msgid "Node type"
+msgstr "Тип файла"
+
+#: src/property_dlg.cxx:34
+msgid "Quantity"
+msgstr "Количество"
+
+#: src/property_dlg.cxx:47 src/fsvwindow.cxx:321
+msgid "Properties"
+msgstr "Свойства"
+
+#: src/property_dlg.cxx:49
+msgid "Type:"
+msgstr "Тип:"
+
+#: src/property_dlg.cxx:50
+msgid "Location:"
+msgstr "Расположение:"
+
+#: src/property_dlg.cxx:51
+msgid "Allocation:"
+msgstr "Занимаемое место :"
+
+#: src/property_dlg.cxx:52
+msgid "Owner:"
+msgstr "Владелец:"
+
+#: src/property_dlg.cxx:53
+msgid "Group:"
+msgstr "Группа:"
+
+#: src/property_dlg.cxx:54
+msgid "Modified:"
+msgstr "Время правки:"
+
+#: src/property_dlg.cxx:55
+msgid "AttribCh:"
+msgstr "Время правки атрибутов:"
+
+#: src/property_dlg.cxx:56
+msgid "Accessed:"
+msgstr "Время доступа:"
+
+#: src/property_dlg.cxx:59
+msgid "General"
+msgstr "Основные"
+
+#: src/property_dlg.cxx:119
+msgid "Total size:"
+msgstr "Суммарный размер:"
+
+#: src/property_dlg.cxx:129
+msgid "Size:"
+msgstr "Размер:"
+
+#: src/property_dlg.cxx:175
+msgid "Contents"
+msgstr "Содержание"
+
+#: src/property_dlg.cxx:178
+msgid "This directory contains:"
+msgstr "Папка содержит:"
+
+#: src/property_dlg.cxx:186
+msgid "File type"
+msgstr "Тип файла:"
+
+#: src/property_dlg.cxx:189
+msgid "This file is recognized as:"
+msgstr "Тип файла:"
+
+#: src/property_dlg.cxx:206
+msgid "Target"
+msgstr "Цель"
+
+#: src/property_dlg.cxx:209
+msgid "This symlink points to:"
+msgstr "Ссылка указывает на:"
+
+#: src/dirtree.cxx:157
+msgid "/. (root)"
+msgstr ""
+
+#: src/filelist.cxx:42
+msgid "Type"
+msgstr "Тип"
+
+#: src/filelist.cxx:42
+msgid "Found"
+msgstr "Найдено"
+
+#: src/filelist.cxx:42
+msgid "Bytes"
+msgstr "Байт"
+
+#: src/filelist.cxx:56
+msgid "TOTAL"
+msgstr "Всего"
+
+#: src/filelist.cxx:141
+msgid "1 node"
+msgstr "1 узел"
+
+#: src/filelist.cxx:145
+#, c-format
+msgid "%d nodes"
+msgstr "%d узлов"
+
+#: src/fsv.cxx:76
+#, c-format
+msgid ""
+"\n"
+"Usage: %s [rootdir] [options]\n"
+"  rootdir      Root directory for visualization\n"
+"               (defaults to current directory)\n"
+"  --mapv       Start in MapV mode (default)\n"
+"  --treev      Start in TreeV mode\n"
+"  --help       Print this help and exit\n"
+"\n"
+"fsv2 - 3D File System Visualizer v.%s"
+msgstr ""
+
+#: src/fsv.cxx:283
+#, c-format
+msgid "Junk in command line:"
+msgstr ""
+
+#: src/scanfs.cxx:142
+#, c-format
+msgid "Scanning: %s"
+msgstr "Сканируется: %s"
+
+#: src/scanfs.cxx:210
+#, c-format
+msgid "%d stats/sec"
+msgstr ""
+
+#: src/fsvwindow.cxx:152
+msgid "Change Root Directory"
+msgstr "Сменить корневую папку"
+
+#: src/fsvwindow.cxx:244
+msgid "Top View"
+msgstr "Вид сверху"
+
+#: src/fsvwindow.cxx:282
+msgid "_Change Root"
+msgstr "Сменить корневую папку"
+
+#: src/fsvwindow.cxx:286
+msgid "_Map View"
+msgstr "_Ящики"
+
+#: src/fsvwindow.cxx:288
+msgid "_Tree View"
+msgstr "_Дерево"
+
+#: src/fsvwindow.cxx:290
+msgid "_Disc View"
+msgstr ""
+
+#: src/fsvwindow.cxx:295
+msgid "By n_odetype"
+msgstr "По _типу"
+
+#: src/fsvwindow.cxx:297
+msgid "By t_imestamp"
+msgstr "По _времени"
+
+#: src/fsvwindow.cxx:299
+msgid "By _wildcard"
+msgstr "По _фильтрам"
+
+#: src/fsvwindow.cxx:311
+msgid "Open"
+msgstr "Открыть"
+
+#: src/fsvwindow.cxx:313
+msgid "Collapse"
+msgstr "Свернуть"
+
+#: src/fsvwindow.cxx:315
+msgid "Expand"
+msgstr "Развернуть"
+
+#: src/fsvwindow.cxx:317
+msgid "Expand all"
+msgstr "Развернуть всё"
+
+#: src/fsvwindow.cxx:319
+msgid "Look at"
+msgstr "Перейти к"
+
+#: src/fsvwindow.cxx:325
+msgid "_File"
+msgstr "_Файл"
+
+#: src/fsvwindow.cxx:326
+msgid "_View"
+msgstr "_Вид"
+
+#: src/fsvwindow.cxx:327
+msgid "_Full Screen"
+msgstr "_Полноэкранный режим"
+
+#: src/fsvwindow.cxx:332
+msgid "_Help"
+msgstr "_Справка"
